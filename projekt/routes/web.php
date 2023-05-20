@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\PeopleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,4 +16,10 @@ use App\Http\Controllers\StudentController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('student-list', [StudentController::class,'index']);
+Route::get('people', [PeopleController::class,'searchPeople']);
+Route::get('people-list', [PeopleController::class,'index']);
+Route::get('add-people', [PeopleController::class,'addPeople']);
+Route::post('save-people', [PeopleController::class,'savePeople']);
+Route::get('edit-people/{id}', [PeopleController::class,'editPeople']);
+Route::post('update-people', [PeopleController::class,'updatePeople']);
+Route::get('delete-people/{id}', [PeopleController::class, 'deletePeople']);
