@@ -16,10 +16,11 @@ use App\Http\Controllers\PeopleController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('people', [PeopleController::class,'searchPeople']);
-Route::get('people-list', [PeopleController::class,'index']);
-Route::get('add-people', [PeopleController::class,'addPeople']);
-Route::post('save-people', [PeopleController::class,'savePeople']);
-Route::get('edit-people/{id}', [PeopleController::class,'editPeople']);
-Route::post('update-people', [PeopleController::class,'updatePeople']);
-Route::get('delete-people/{id}', [PeopleController::class, 'deletePeople']);
+Route::get('Majer/50439/people/{id}', [PeopleController::class,'people']);
+Route::get('Majer/50439/people-list', [PeopleController::class,'index']);
+Route::get('Majer/50439/add-people', [PeopleController::class,'addPeople']);
+Route::post('Majer/50439/save-people', [PeopleController::class,'savePeople']);
+Route::get('Majer/50439/edit-people/{id}', [PeopleController::class,'editPeople']);
+Route::post('Majer/50439/update-people', [PeopleController::class,'updatePeople']);
+Route::get('Majer/50439/delete-people/{id}', [PeopleController::class, 'deletePeople']);
+Route::put('Majer/50439/change-people/{id}', [PeopleController::class, 'changePeople']);

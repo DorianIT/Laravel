@@ -18,7 +18,7 @@
             <div class="col-md-12">
                 <h2>People List</h2>
                 <div style="margin-right: 10%; float: right">
-                    <a href="{{url('add-people')}}" class="btn btn-info">Add People</a>
+                    <a href='{{url("Majer/50439/add-people")}}' class="btn btn-info">Add People</a>
                 </div>
                 @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
@@ -54,9 +54,9 @@
                             <td>{{$stu->country}}</td>
                             
                             <td>
-                            <a href="{{url('edit-people/'.$stu->id)}}" class="btn btn-info">Edit</a>
+                            <a href='{{url("Majer/50439/edit-people/".$stu->id)}}' class="btn btn-info">Edit</a>
                             
-                            <a href="{{url('delete-people/'.$stu->id)}}" class="btn btn-danger">Delete
+                            <a href="{{url('Majer/50439/delete-people/'.$stu->id)}}" class="btn btn-danger">Delete
                             </td>
                         </tr>
                         @endforeach

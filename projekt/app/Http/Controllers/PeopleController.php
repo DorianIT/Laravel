@@ -11,8 +11,9 @@ class PeopleController extends Controller
         //return $data;
         return view('people-list', compact('data'));
     }
-    public function searchPeople(){
-        $data = People::get();
+    public function people($id){
+        $data = People::find($id);
+        //return $data;
         return view('people', compact('data'));
     }
     public function addPeople(){
@@ -83,5 +84,17 @@ class PeopleController extends Controller
     public function deletePeople($id){
         People::where('id','=',$id)->delete();
         return redirect()->back()->with('success','People deleted successfully');
+    }
+    function changePeople(Request $request, $id){
+        $people = People::find($id);
+        $people->name = $request->input('name');
+        $people->surname = $request->input('surname');
+        $people->email = $request->input('email');
+        $people->phone = $request->input('phone');
+        $people->address = $request->input('address');
+        $people->country = $request->input('country');
+
+        $students->save();
+        return["result"=>"Changes applied"];
     }
 }

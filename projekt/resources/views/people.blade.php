@@ -25,41 +25,33 @@
                         <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Surname</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Address</th>
+                        <th>Country</th>
                         <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @php
-                            $i = 1;
-                        @endphp
-
-                        @foreach ($data as $stu)
+                        
                         <tr>
-                            <td>{{$stu->id}}</td>
-                            <td>{{$stu->name}}</td>
-                            <td>{{$stu->email}}</td>
-                            <td>{{$stu->phone}}</td>
-                            <td>{{$stu->address}}</td>
+                            <td>{{$data->id}}</td>
+                            <td>{{$data->name}}</td>
+                            <td>{{$data->surname}}</td>
+                            <td>{{$data->email}}</td>
+                            <td>{{$data->phone}}</td>
+                            <td>{{$data->address}}</td>
+                            <td>{{$data->country}}</td>
                             <td>
-                            <a href="{{url('edit-people/'.$stu->id)}}" class="btn btn-info">Edit</a>
+                            <a href='{{url("Majer/50439/edit-people/".$data->id)}}' class="btn btn-info">Edit</a>
+                            
+                            <a href="{{url('Majer/50439/delete-people/'.$data->id)}}" class="btn btn-danger">Delete
                             </td>
                         </tr>
-                        @endforeach
                     </tbody>
                 </table>
-                <form method="post" action="{{url('people')}}">
-                    @csrf
-                    <div class="md3">
-                        <label class="form-label">Search by id</label>
-                        <input type="text" class="form-control" name="id" 
-                        placeholder="Enter id" value="{{old('name')}}">
-                    </div>
-                    <br>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <a href="{{url('people-list')}}"class="btn btn-danger">Back</a>
+                    
 
             </div>
         </div>

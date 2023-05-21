@@ -19,7 +19,7 @@
                     {{Session::get('success')}}
                 </div>
                 @endif
-                <form method="post" action="{{url('save-people')}}">
+                <form method="post" action="{{url('Majer/50439/save-people')}}">
                     @csrf
                     <div class="md3">
                         <label class="form-label">Name</label>
@@ -83,7 +83,7 @@
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                    <a href="{{url('people-list')}}"class="btn btn-danger">Back</a>
+                    <a href="{{url('Majer/50439/people-list')}}"class="btn btn-danger">Back</a>
                 </form>
             </div>
         </div>
